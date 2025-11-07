@@ -1,0 +1,21 @@
+{
+  "brick_id": "handle_error_v1",
+  "generated": "2025-11-06T12:00:00Z",
+  "model": "manual",
+  "interface": {
+    "inputs": {
+      "status_code": "int",
+      "response_text": "string"
+    },
+    "outputs": {
+      "severity": "string",
+      "message": "string",
+      "retryable": "bool"
+    }
+  },
+  "dependencies": [],
+  "tests": ["test_handle_error_server"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

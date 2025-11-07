@@ -1,0 +1,24 @@
+{
+  "brick_id": "auth_validate_token_v1",
+  "generated": "2025-11-06T00:00:00Z",
+  "model": "claude-sonnet-4.5",
+  "prompt_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "interface": {
+    "inputs": {
+      "token": "string",
+      "secret_key": "string"
+    },
+    "outputs": {
+      "user_id": "integer|null",
+      "username": "string|null",
+      "roles": "list|null",
+      "error": "string|null"
+    },
+    "errors": ["InvalidTokenError", "ExpiredTokenError", "ValidationError"]
+  },
+  "dependencies": ["jwt", "datetime"],
+  "tests": ["test_valid_token", "test_expired_token", "test_invalid_token", "test_wrong_secret"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

@@ -1,0 +1,23 @@
+{
+  "brick_id": "auth_check_permission_v1",
+  "generated": "2025-11-06T15:34:00Z",
+  "model": "claude-sonnet-4.5",
+  "prompt_hash": "sha256:check_permission_rbac_auth_brick",
+  "interface": {
+    "inputs": {
+      "user_roles": "list",
+      "required_roles": "list",
+      "require_all": "boolean"
+    },
+    "outputs": {
+      "has_permission": "boolean",
+      "error": "string|null"
+    },
+    "errors": ["Exception"]
+  },
+  "dependencies": [],
+  "tests": ["test_check_permission_has_role", "test_check_permission_missing_role", "test_check_permission_require_all", "test_check_permission_no_requirements"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

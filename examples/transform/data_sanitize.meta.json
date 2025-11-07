@@ -1,0 +1,20 @@
+{
+  "brick_id": "data_sanitize_v1",
+  "generated": "2025-11-06T12:00:00Z",
+  "model": "manual",
+  "interface": {
+    "inputs": {
+      "text": "string",
+      "allow_html": "bool"
+    },
+    "outputs": {
+      "sanitized": "string",
+      "removed": "list"
+    }
+  },
+  "dependencies": ["html", "re"],
+  "tests": ["test_data_sanitize", "test_data_sanitize_allow_html"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

@@ -1,0 +1,24 @@
+{
+  "brick_id": "cache_get_v1",
+  "generated": "2025-11-06T12:00:00Z",
+  "model": "claude-sonnet-4.5",
+  "prompt_hash": "sha256:mno345",
+  "interface": {
+    "inputs": {
+      "cache_dir": "string",
+      "key": "string",
+      "max_age": "integer"
+    },
+    "outputs": {
+      "value": "any",
+      "hit": "boolean",
+      "error": "string|null"
+    },
+    "errors": ["json.JSONDecodeError", "Exception"]
+  },
+  "dependencies": ["time", "json", "pathlib"],
+  "tests": ["test_cache_get"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

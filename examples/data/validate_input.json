@@ -1,0 +1,28 @@
+{
+  "brick_id": "validate_input_v1",
+  "generated": "2025-11-06T15:40:00Z",
+  "model": "claude-sonnet-4.5",
+  "prompt_hash": "sha256:7c5e8a4f1b3d6e9f2a8c5b4d3e1a9f7c",
+  "interface": {
+    "inputs": {
+      "data": "any",
+      "rules": "dict"
+    },
+    "outputs": {
+      "valid": "boolean",
+      "sanitized": "any",
+      "error": "string|null"
+    },
+    "errors": [
+      "type_mismatch",
+      "range_violation",
+      "pattern_mismatch",
+      "not_allowed"
+    ]
+  },
+  "dependencies": ["re"],
+  "tests": ["test_validate_input"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

@@ -1,0 +1,27 @@
+{
+  "brick_id": "sanitize_sql_v1",
+  "generated": "2025-11-06T15:45:00Z",
+  "model": "claude-sonnet-4.5",
+  "prompt_hash": "sha256:9d6f2a4e8b1c5d7f3e9a6c4b2d1f8e5a",
+  "interface": {
+    "inputs": {
+      "identifier": "string|null",
+      "value": "any"
+    },
+    "outputs": {
+      "sanitized": "string|null",
+      "safe": "boolean",
+      "error": "string|null"
+    },
+    "errors": [
+      "invalid_identifier",
+      "reserved_keyword",
+      "suspicious_pattern"
+    ]
+  },
+  "dependencies": ["re"],
+  "tests": ["test_sanitize_sql"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

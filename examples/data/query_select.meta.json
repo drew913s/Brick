@@ -1,0 +1,24 @@
+{
+  "brick_id": "query_select_v1",
+  "generated": "2025-11-06T12:00:00Z",
+  "model": "claude-sonnet-4.5",
+  "prompt_hash": "sha256:abc123",
+  "interface": {
+    "inputs": {
+      "db_path": "string",
+      "query": "string",
+      "params": "tuple"
+    },
+    "outputs": {
+      "rows": "list[dict]",
+      "count": "integer",
+      "error": "string|null"
+    },
+    "errors": ["sqlite3.Error", "Exception"]
+  },
+  "dependencies": ["sqlite3"],
+  "tests": ["test_query_select"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

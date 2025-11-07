@@ -1,0 +1,21 @@
+# Brick Architecture CLI Tool Requirements
+
+# Core dependencies for CLI
+PyYAML>=6.0        # YAML spec file parsing
+
+# Testing dependencies
+pytest>=7.0.0      # Test runner
+pytest-cov>=4.0.0  # Coverage reporting
+
+# Example brick dependencies
+requests>=2.28.0   # API examples (http_get, http_post)
+bcrypt>=4.1.0      # Auth examples (password hashing)
+PyJWT>=2.8.0       # Auth examples (JWT tokens)
+
+# Optional: AI code generation
+anthropic>=0.39.0  # Claude API for brick generation
+
+# Optional: Code quality tools
+black>=23.0.0      # Code formatting
+flake8>=6.0.0      # Linting
+mypy>=1.0.0        # Type checking

@@ -1,0 +1,23 @@
+{
+  "brick_id": "http_post_v1",
+  "generated": "2025-11-06T12:00:00Z",
+  "model": "manual",
+  "interface": {
+    "inputs": {
+      "url": "string",
+      "data": "dict",
+      "headers": "dict|null",
+      "timeout": "int"
+    },
+    "outputs": {
+      "status": "int",
+      "data": "string|null",
+      "error": "string|null"
+    }
+  },
+  "dependencies": ["requests"],
+  "tests": ["test_http_post"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

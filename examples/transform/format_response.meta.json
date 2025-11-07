@@ -1,0 +1,22 @@
+{
+  "brick_id": "format_response_v1",
+  "generated": "2025-11-06T12:00:00Z",
+  "model": "manual",
+  "interface": {
+    "inputs": {
+      "data": "dict",
+      "format_type": "string",
+      "status": "int"
+    },
+    "outputs": {
+      "body": "string",
+      "content_type": "string",
+      "status": "int"
+    }
+  },
+  "dependencies": ["json"],
+  "tests": ["test_format_response_json", "test_format_response_xml"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

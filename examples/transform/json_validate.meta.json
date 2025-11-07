@@ -1,0 +1,21 @@
+{
+  "brick_id": "json_validate_v1",
+  "generated": "2025-11-06T12:00:00Z",
+  "model": "manual",
+  "interface": {
+    "inputs": {
+      "json_string": "string",
+      "schema": "dict|null"
+    },
+    "outputs": {
+      "valid": "bool",
+      "data": "dict|null",
+      "error": "string|null"
+    }
+  },
+  "dependencies": ["json"],
+  "tests": ["test_json_validate", "test_json_validate_schema"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

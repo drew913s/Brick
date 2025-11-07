@@ -1,0 +1,25 @@
+{
+  "brick_id": "auth_generate_token_v1",
+  "generated": "2025-11-06T15:31:00Z",
+  "model": "claude-sonnet-4.5",
+  "prompt_hash": "sha256:generate_token_jwt_auth_brick",
+  "interface": {
+    "inputs": {
+      "user_id": "integer",
+      "username": "string",
+      "roles": "list",
+      "secret_key": "string",
+      "expiry_hours": "integer"
+    },
+    "outputs": {
+      "token": "string|null",
+      "error": "string|null"
+    },
+    "errors": ["Exception"]
+  },
+  "dependencies": ["jwt", "datetime"],
+  "tests": ["test_generate_token_valid", "test_generate_token_invalid"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

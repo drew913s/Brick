@@ -1,0 +1,22 @@
+{
+  "brick_id": "rate_limit_v1",
+  "generated": "2025-11-06T12:00:00Z",
+  "model": "manual",
+  "interface": {
+    "inputs": {
+      "client_id": "string",
+      "max_requests": "int",
+      "window_seconds": "int"
+    },
+    "outputs": {
+      "allowed": "bool",
+      "remaining": "int",
+      "reset_at": "float"
+    }
+  },
+  "dependencies": ["time", "collections"],
+  "tests": ["test_rate_limit"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

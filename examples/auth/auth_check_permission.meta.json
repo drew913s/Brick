@@ -1,0 +1,24 @@
+{
+  "brick_id": "auth_check_permission_v1",
+  "generated": "2025-11-06T00:00:00Z",
+  "model": "claude-sonnet-4.5",
+  "prompt_hash": "sha256:c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4",
+  "interface": {
+    "inputs": {
+      "user_roles": "list",
+      "required_permission": "string",
+      "role_permissions": "dict"
+    },
+    "outputs": {
+      "allowed": "boolean",
+      "matched_role": "string|null",
+      "error": "string|null"
+    },
+    "errors": ["InvalidUserRolesError", "EmptyPermissionError", "InvalidRolePermissionsError", "PermissionCheckError"]
+  },
+  "dependencies": [],
+  "tests": ["test_permission_granted", "test_permission_denied", "test_multiple_roles", "test_unknown_role", "test_empty_roles", "test_invalid_user_roles_type", "test_empty_permission"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

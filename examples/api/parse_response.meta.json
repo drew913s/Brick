@@ -1,0 +1,20 @@
+{
+  "brick_id": "parse_response_v1",
+  "generated": "2025-11-06T12:00:00Z",
+  "model": "manual",
+  "interface": {
+    "inputs": {
+      "response_text": "string",
+      "expected_keys": "list|null"
+    },
+    "outputs": {
+      "data": "dict|null",
+      "error": "string|null"
+    }
+  },
+  "dependencies": ["json"],
+  "tests": ["test_parse_response", "test_parse_response_invalid"],
+  "modified": false,
+  "lineage": [],
+  "inspector_score": null
+}

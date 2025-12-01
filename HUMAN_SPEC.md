@@ -119,6 +119,7 @@ Know which phase you're in:
 3. ☐ Do I have a terminal ID assigned?
 4. ☐ Can I add one more card to my tracker?
 5. ☐ Is there room in current wave?
+6. ☐ **File conflict check:** Do any files overlap with in-progress workers?
 
 **Spawn steps:**
 
@@ -440,6 +441,15 @@ A project is **DONE** when:
   - Created tracking systems
   - Established protocols
   - Added troubleshooting guide
+
+---
+
+## Related Documentation
+
+- **SESSION_SPEC.md** - How AI sessions behave
+- **BRICK_SPEC.md** - Core brick requirements
+- **BOOTSTRAP_PROMPTS.md** - Ready-to-paste prompts
+- **CONFLICT_RESOLUTION.md** - Handling concurrent edits, rate limits, recovery scenarios
 
 ---
 

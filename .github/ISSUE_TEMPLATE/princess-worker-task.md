@@ -1,60 +1,128 @@
 ---
 name: Princess Worker Task
-about: Create a worker task for an Ant to implement
-title: '[TASK] '
+about: Worker-sized task specification created by Princess session
+title: '[WORKER] '
 labels: worker, backlog
 assignees: ''
 ---
 
-## Task: [TASK NAME]
+## Worker Task
 
-**Parent:** Q-[DOMAIN] (Princess)
-**Assigned to:** Q-[DOMAIN]-[N]
+**Task ID:** Q-{DOMAIN}-{N}
+**Parent Domain:** Q-{DOMAIN}
+**Parent Issue:** #{PARENT_ISSUE_NUMBER}
 
 ---
 
 ## Single Responsibility
 
-<!-- ONE thing this worker does -->
+**What this worker builds:**
+(One sentence, one thing)
 
-## Input
 
-<!-- What this task receives -->
-
-## Output
-
-<!-- What this task produces -->
-
-## Brick(s) to Create
-
-| Brick Name | Purpose | Max Lines |
-|------------|---------|-----------|
-| | | ≤50 |
-
-## Implementation Notes
-
-<!-- Specific requirements, constraints, patterns to follow -->
-
-## Acceptance Criteria
-
-- [ ] Code follows BRICK_SPEC.md
-- [ ] ≤50 lines per file
-- [ ] HUMAN can access/test via: [URL/command/button]
-- [ ] GitHub issue updated with progress
-- [ ] Files changed listed
-
-## Access Method
-
-**Type:** [ ] URL  [ ] CLI Command  [ ] API Endpoint  [ ] UI Button
-
-**Location:**
-
-**Test Instructions:**
-1.
-2.
-3.
 
 ---
 
-**Created by:** Q-[DOMAIN] (Princess)
-**Status:** Awaiting Worker
+## Brick Specification
+
+**Brick Name:** `{domain}_{function_name}`
+
+### Interface
+
+```yaml
+inputs:
+  param_name: type
+  param_name: type
+
+outputs:
+  result: type
+  error: string|null
+
+errors:
+  - error_type_1
+  - error_type_2
+```
+
+### Constraints
+- 
+- 
+- 
+
+### Dependencies
+- 
+
+---
+
+## Acceptance Criteria
+
+- [ ] Brick ≤50 lines
+- [ ] Docstring with inputs/outputs/errors
+- [ ] Tests included
+- [ ] No banned patterns (eval, exec, shell=True, etc.)
+- [ ] Metadata file created
+
+---
+
+## Access Method
+
+**HUMAN tests this by:**
+
+| Method | Location |
+|--------|----------|
+| URL | |
+| Command | |
+| Button | |
+| API Call | |
+
+**Success looks like:**
+
+
+**Failure looks like:**
+
+
+---
+
+## File Ownership
+
+**This task CREATES:**
+- [ ] `bricks/{domain}/{brick_name}.py` (NEW)
+- [ ] `bricks/{domain}/{brick_name}.meta.json` (NEW)
+- [ ] (optional) `bricks/{domain}/test_{brick_name}.py` (NEW)
+
+**This task MODIFIES:**
+- (none - or list files)
+
+**OFF LIMITS (other workers own these):**
+- (list files owned by concurrent workers)
+
+---
+
+## Integration Notes
+
+**This brick is used by:**
+- 
+
+**This brick uses:**
+- 
+
+---
+
+## Worker Assignment
+
+**Spawn Ant:** `Q-{DOMAIN}-{N}`
+**Bootstrap:** See SESSION_SPEC.md Ant template
+
+---
+
+## Progress Log
+
+_Worker updates here every 30 minutes_
+
+<!-- 
+## Progress Update - YYYY-MM-DDTHH:MM
+**Status:** Working | Blocked | Complete
+**Done:** 
+**Current:**
+**Blockers:**
+**Files:**
+-->

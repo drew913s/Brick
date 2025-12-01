@@ -1,59 +1,89 @@
 ---
-name: Queen Domain Specification
-about: Create a domain specification for a Princess to implement
-title: '[DOMAIN] '
-labels: princess, backlog
+name: Queen Domain Spec
+about: Top-level domain specification created by Queen session
+title: '[QUEEN] Domain: '
+labels: queen, backlog
 assignees: ''
 ---
 
-## Domain: [DOMAIN NAME]
+## Domain Specification
 
-**Parent:** Q (Queen)
-**Assigned to:** Q-[DOMAIN]
+**Domain Name:** 
+**Parent Project:** 
+**Created By:** Q (Queen)
 
 ---
 
-## Domain Scope
+## Scope
 
-<!-- What this domain is responsible for -->
+### This domain is responsible for:
+- 
+- 
+- 
+
+### This domain is NOT responsible for:
+- 
+- 
+- 
+
+---
 
 ## Boundaries
 
-<!-- What is IN scope -->
--
+### Inputs (what this domain receives):
+| Input | From Domain | Format |
+|-------|-------------|--------|
+| | | |
 
-<!-- What is OUT of scope -->
--
-
-## Key Responsibilities
-
-1.
-2.
-3.
-
-## Integration Points
-
-<!-- How this domain connects to others -->
-
-| Integrates With | How |
-|-----------------|-----|
-| Q-[OTHER] | |
-
-## Acceptance Criteria
-
-- [ ]
-- [ ]
-- [ ]
-
-## Princess Instructions
-
-1. Read this spec completely
-2. Design domain architecture
-3. Break into worker tasks (≤50 lines each)
-4. Create GitHub issues for each Ant task
-5. Tell HUMAN which terminals to open
+### Outputs (what this domain provides):
+| Output | To Domain | Format |
+|--------|-----------|--------|
+| | | |
 
 ---
 
-**Created by:** Q (Queen)
-**Status:** Awaiting Princess
+## Key Components
+
+List the major pieces this domain needs:
+
+1. **Component Name**
+   - Purpose:
+   - Estimated complexity:
+
+2. **Component Name**
+   - Purpose:
+   - Estimated complexity:
+
+---
+
+## Integration Points
+
+How this domain connects to others:
+
+```
+[Other Domain] → [This Domain] → [Other Domain]
+```
+
+---
+
+## Acceptance Criteria
+
+This domain is complete when:
+- [ ] 
+- [ ] 
+- [ ] 
+
+---
+
+## Princess Assignment
+
+**Spawn Princess:** `Q-{DOMAIN_CODE}`
+**Bootstrap:** See SESSION_SPEC.md Princess template
+
+---
+
+## Notes
+
+Additional context or constraints:
+
+

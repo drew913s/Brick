@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HUMAN Operator Flowchart - Page 1</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 20px;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+svg {
+  display: block;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #ccc;
+}
+@media print {
+  body { margin: 0; background: white; }
+  svg { border: none; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🐜 HUMAN Operator Flow — Page 1 of 2</h1>
+
+<svg width="950" height="1400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="475" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#666">Numbers match commands on Page 2</text>
+
+  <!-- START -->
+  <ellipse cx="475" cy="70" rx="60" ry="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="475" y="75" text-anchor="middle" fill="white" font-weight="bold">START</text>
+
+  <!-- Arrow to first decision -->
+  <line x1="475" y1="95" x2="475" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- New Project or Existing? -->
+  <polygon points="475,135 575,185 475,235 375,185" fill="#f39c12" stroke="#d68910" stroke-width="2"/>
+  <text x="475" y="180" text-anchor="middle" font-size="12" font-weight="bold">New Project</text>
+  <text x="475" y="195" text-anchor="middle" font-size="12" font-weight="bold">or Existing?</text>
+  <!-- Number 1 -->
+  <circle cx="580" cy="150" r="14" fill="#e74c3c"/>
+  <text x="580" y="155" text-anchor="middle" fill="white" font-weight="bold" font-size="12">1</text>
+
+  <!-- New Project Path -->
+  <line x1="375" y1="185" x2="200" y2="185" stroke="#333" stroke-width="2"/>
+  <line x1="200" y1="185" x2="200" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="280" y="175" font-size="11" fill="#333">NEW</text>
+
+  <!-- Existing Code Path -->
+  <line x1="575" y1="185" x2="750" y2="185" stroke="#333" stroke-width="2"/>
+  <line x1="750" y1="185" x2="750" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="650" y="175" font-size="11" fill="#333">EXISTING</text>
+
+  <!-- Spawn Queen (New) -->
+  <rect x="100" y="255" width="200" height="50" rx="5" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="200" y="275" text-anchor="middle" fill="white" font-weight="bold">Spawn QUEEN</text>
+  <text x="200" y="292" text-anchor="middle" fill="white" font-size="11">System Architecture</text>
+  <!-- Number 2 -->
+  <circle cx="310" cy="265" r="14" fill="#9b59b6"/>
+  <text x="310" y="270" text-anchor="middle" fill="white" font-weight="bold" font-size="12">2</text>
+
+  <!-- Spawn Queen Audit (Existing) -->
+  <rect x="650" y="255" width="200" height="50" rx="5" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="750" y="275" text-anchor="middle" fill="white" font-weight="bold">Spawn QUEEN</text>
+  <text x="750" y="292" text-anchor="middle" fill="white" font-size="11">Audit Mode</text>
+  <!-- Number 3 -->
+  <circle cx="860" cy="265" r="14" fill="#9b59b6"/>
+  <text x="860" y="270" text-anchor="middle" fill="white" font-weight="bold" font-size="12">3</text>
+
+  <!-- Arrows down -->
+  <line x1="200" y1="305" x2="200" y2="340" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="750" y1="305" x2="750" y2="340" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Queen outputs -->
+  <rect x="100" y="345" width="200" height="40" rx="5" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+  <text x="200" y="370" text-anchor="middle" font-size="11">Domain issues in GitHub</text>
+
+  <rect x="650" y="345" width="200" height="40" rx="5" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+  <text x="750" y="370" text-anchor="middle" font-size="11">Audit + Wrapper issues</text>
+
+  <!-- Merge paths -->
+  <line x1="200" y1="385" x2="200" y2="420" stroke="#333" stroke-width="2"/>
+  <line x1="750" y1="385" x2="750" y2="420" stroke="#333" stroke-width="2"/>
+  <line x1="200" y1="420" x2="475" y2="420" stroke="#333" stroke-width="2"/>
+  <line x1="750" y1="420" x2="475" y2="420" stroke="#333" stroke-width="2"/>
+  <line x1="475" y1="420" x2="475" y2="455" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Review Issues -->
+  <rect x="350" y="460" width="250" height="50" rx="5" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="475" y="485" text-anchor="middle" fill="white" font-weight="bold">Review Issues in GitHub</text>
+  <text x="475" y="500" text-anchor="middle" fill="white" font-size="10">Pick next BACKLOG task</text>
+  <!-- Number 4 -->
+  <circle cx="610" cy="470" r="14" fill="#1abc9c"/>
+  <text x="610" y="475" text-anchor="middle" fill="white" font-weight="bold" font-size="12">4</text>
+
+  <!-- Arrow to spawn decision -->
+  <line x1="475" y1="510" x2="475" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Ready to spawn? -->
+  <polygon points="475,555 590,610 475,665 360,610" fill="#f39c12" stroke="#d68910" stroke-width="2"/>
+  <text x="475" y="600" text-anchor="middle" font-size="11" font-weight="bold">Dependencies</text>
+  <text x="475" y="615" text-anchor="middle" font-size="11" font-weight="bold">DONE?</text>
+  <text x="475" y="630" text-anchor="middle" font-size="11" font-weight="bold">Files clear?</text>
+  <!-- Number 5 -->
+  <circle cx="600" cy="565" r="14" fill="#f39c12"/>
+  <text x="600" y="570" text-anchor="middle" fill="white" font-weight="bold" font-size="12">5</text>
+
+  <!-- No - wait -->
+  <line x1="590" y1="610" x2="700" y2="610" stroke="#c0392b" stroke-width="2"/>
+  <text x="630" y="600" font-size="11" fill="#c0392b">NO</text>
+  <rect x="700" y="585" width="140" height="50" rx="5" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="770" y="610" text-anchor="middle" fill="white" font-weight="bold">WAIT</text>
+  <text x="770" y="625" text-anchor="middle" fill="white" font-size="10">or pick different task</text>
+  <!-- Loop back -->
+  <line x1="770" y1="585" x2="770" y2="485" stroke="#c0392b" stroke-width="2"/>
+  <line x1="770" y1="485" x2="600" y2="485" stroke="#c0392b" stroke-width="2" marker-end="url(#arrow-red)"/>
+
+  <!-- Yes - spawn -->
+  <line x1="475" y1="665" x2="475" y2="710" stroke="#27ae60" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="485" y="690" font-size="11" fill="#27ae60">YES</text>
+
+  <!-- Spawn Worker -->
+  <rect x="350" y="715" width="250" height="60" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="475" y="740" text-anchor="middle" fill="white" font-weight="bold">SPAWN WORKER</text>
+  <text x="475" y="755" text-anchor="middle" fill="white" font-size="10">New terminal + Bootstrap prompt</text>
+  <text x="475" y="768" text-anchor="middle" fill="white" font-size="10">Update tracker (terminal#, files, time)</text>
+  <!-- Number 6 -->
+  <circle cx="610" cy="725" r="14" fill="#3498db"/>
+  <text x="610" y="730" text-anchor="middle" fill="white" font-weight="bold" font-size="12">6</text>
+
+  <!-- Arrow to monitor loop -->
+  <line x1="475" y1="775" x2="475" y2="815" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- MONITOR LOOP BOX -->
+  <rect x="150" y="820" width="650" height="280" rx="10" fill="none" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="475" y="845" text-anchor="middle" font-size="12" font-weight="bold" fill="#7f8c8d">⏱️ EVERY 30 MINUTES (per worker)</text>
+
+  <!-- Check worker -->
+  <polygon points="475,865 575,910 475,955 375,910" fill="#f39c12" stroke="#d68910" stroke-width="2"/>
+  <text x="475" y="905" text-anchor="middle" font-size="11" font-weight="bold">Worker</text>
+  <text x="475" y="920" text-anchor="middle" font-size="11" font-weight="bold">Active?</text>
+  <!-- Number 7 -->
+  <circle cx="580" cy="870" r="14" fill="#f39c12"/>
+  <text x="580" y="875" text-anchor="middle" fill="white" font-weight="bold" font-size="12">7</text>
+
+  <!-- No - silent -->
+  <line x1="375" y1="910" x2="250" y2="910" stroke="#c0392b" stroke-width="2"/>
+  <text x="320" y="900" font-size="11" fill="#c0392b">SILENT</text>
+  
+  <polygon points="250,910 310,950 250,990 190,950" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="250" y="945" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Fixable?</text>
+
+  <line x1="190" y1="950" x2="100" y2="950" stroke="#c0392b" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="145" y="940" font-size="10" fill="#c0392b">NO</text>
+  <rect x="30" y="925" width="70" height="50" rx="5" fill="#c0392b" stroke="#922b21" stroke-width="2"/>
+  <text x="65" y="945" text-anchor="middle" fill="white" font-size="9" font-weight="bold">ABANDON</text>
+  <text x="65" y="958" text-anchor="middle" fill="white" font-size="8">Close</text>
+  <text x="65" y="968" text-anchor="middle" fill="white" font-size="8">Respawn</text>
+  <!-- Number 8 -->
+  <circle cx="65" cy="915" r="14" fill="#c0392b"/>
+  <text x="65" y="920" text-anchor="middle" fill="white" font-weight="bold" font-size="12">8</text>
+
+  <line x1="250" y1="990" x2="250" y2="1020" stroke="#27ae60" stroke-width="2"/>
+  <text x="260" y="1010" font-size="10" fill="#27ae60">YES</text>
+  <rect x="200" y="1020" width="100" height="35" rx="5" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="250" y="1042" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Prompt it</text>
+  <!-- Number 9 -->
+  <circle cx="310" cy="1030" r="14" fill="#27ae60"/>
+  <text x="310" y="1035" text-anchor="middle" fill="white" font-weight="bold" font-size="12">9</text>
+
+  <!-- Yes - check progress -->
+  <line x1="575" y1="910" x2="680" y2="910" stroke="#27ae60" stroke-width="2"/>
+  <text x="615" y="900" font-size="11" fill="#27ae60">ACTIVE</text>
+  
+  <polygon points="750,910 830,955 750,1000 670,955" fill="#f39c12" stroke="#d68910" stroke-width="2"/>
+  <text x="750" y="950" text-anchor="middle" font-size="10" font-weight="bold">Abandon</text>
+  <text x="750" y="965" text-anchor="middle" font-size="10" font-weight="bold">trigger?</text>
+  <!-- Number 10 -->
+  <circle cx="835" cy="915" r="14" fill="#f39c12"/>
+  <text x="835" y="920" text-anchor="middle" fill="white" font-weight="bold" font-size="11">10</text>
+
+  <!-- Abandon trigger hit -->
+  <line x1="830" y1="955" x2="890" y2="955" stroke="#c0392b" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="855" y="945" font-size="10" fill="#c0392b">YES</text>
+  <rect x="890" y="930" width="50" height="50" rx="5" fill="#c0392b" stroke="#922b21" stroke-width="2"/>
+  <text x="915" y="955" text-anchor="middle" fill="white" font-size="8" font-weight="bold">ABANDON</text>
+
+  <!-- No trigger - let it work -->
+  <line x1="750" y1="1000" x2="750" y2="1040" stroke="#27ae60" stroke-width="2"/>
+  <text x="760" y="1025" font-size="10" fill="#27ae60">NO</text>
+  <rect x="690" y="1040" width="120" height="35" rx="5" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="750" y="1062" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Let it work</text>
+
+  <!-- Loop back indicator -->
+  <path d="M 475 955 Q 475 1080 600 1080" fill="none" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="530" y="1070" font-size="9" fill="#7f8c8d">repeat every 30 min</text>
+
+  <!-- END MONITOR LOOP -->
+
+  <!-- Worker Done? -->
+  <line x1="475" y1="1100" x2="475" y2="1140" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <polygon points="475,1145 575,1195 475,1245 375,1195" fill="#f39c12" stroke="#d68910" stroke-width="2"/>
+  <text x="475" y="1185" text-anchor="middle" font-size="11" font-weight="bold">Worker</text>
+  <text x="475" y="1200" text-anchor="middle" font-size="11" font-weight="bold">CODE_COMPLETE?</text>
+  <!-- Number 11 -->
+  <circle cx="580" cy="1150" r="14" fill="#f39c12"/>
+  <text x="580" y="1155" text-anchor="middle" fill="white" font-weight="bold" font-size="11">11</text>
+
+  <!-- No - back to monitor -->
+  <line x1="375" y1="1195" x2="280" y2="1195" stroke="#c0392b" stroke-width="2"/>
+  <line x1="280" y1="1195" x2="280" y2="870" stroke="#c0392b" stroke-width="2"/>
+  <line x1="280" y1="870" x2="375" y2="870" stroke="#c0392b" stroke-width="2"/>
+  <line x1="375" y1="870" x2="375" y2="910" stroke="#c0392b" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="290" y="1185" font-size="10" fill="#c0392b">NO</text>
+
+  <!-- Yes - test it -->
+  <line x1="575" y1="1195" x2="680" y2="1195" stroke="#27ae60" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="615" y="1185" font-size="10" fill="#27ae60">YES</text>
+
+  <!-- HUMAN Test -->
+  <rect x="680" y="1170" width="150" height="50" rx="5" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="755" y="1190" text-anchor="middle" fill="white" font-weight="bold">HUMAN TEST</text>
+  <text x="755" y="1207" text-anchor="middle" fill="white" font-size="10">Run it. Click it. Break it.</text>
+  <!-- Number 12 -->
+  <circle cx="840" cy="1180" r="14" fill="#9b59b6"/>
+  <text x="840" y="1185" text-anchor="middle" fill="white" font-weight="bold" font-size="11">12</text>
+
+  <!-- Test result -->
+  <line x1="755" y1="1220" x2="755" y2="1260" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <polygon points="755,1265 830,1305 755,1345 680,1305" fill="#f39c12" stroke="#d68910" stroke-width="2"/>
+  <text x="755" y="1305" text-anchor="middle" font-size="11" font-weight="bold">Works?</text>
+  <!-- Number 13 -->
+  <circle cx="835" cy="1270" r="14" fill="#f39c12"/>
+  <text x="835" y="1275" text-anchor="middle" fill="white" font-weight="bold" font-size="11">13</text>
+
+  <!-- No - create fix issue -->
+  <line x1="680" y1="1305" x2="580" y2="1305" stroke="#c0392b" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="640" y="1295" font-size="10" fill="#c0392b">NO</text>
+  <rect x="450" y="1280" width="130" height="50" rx="5" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="515" y="1300" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Create FIX issue</text>
+  <text x="515" y="1315" text-anchor="middle" fill="white" font-size="9">Back to Review Issues</text>
+  <!-- Number 14 -->
+  <circle cx="450" cy="1270" r="14" fill="#e74c3c"/>
+  <text x="450" y="1275" text-anchor="middle" fill="white" font-weight="bold" font-size="11">14</text>
+  <!-- Arrow back up -->
+  <line x1="515" y1="1280" x2="515" y2="500" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="515" y1="500" x2="560" y2="500" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,4" marker-end="url(#arrow-red)"/>
+
+  <!-- Yes - mark done -->
+  <line x1="830" y1="1305" x2="890" y2="1305" stroke="#27ae60" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="855" y="1295" font-size="10" fill="#27ae60">YES</text>
+  <rect x="890" y="1280" width="50" height="50" rx="5" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="915" y="1300" text-anchor="middle" fill="white" font-size="9" font-weight="bold">DONE</text>
+  <text x="915" y="1315" text-anchor="middle" fill="white" font-size="8">Update</text>
+  <text x="915" y="1327" text-anchor="middle" fill="white" font-size="8">GitHub</text>
+  <!-- Number 15 -->
+  <circle cx="915" cy="1270" r="14" fill="#27ae60"/>
+  <text x="915" y="1275" text-anchor="middle" fill="white" font-weight="bold" font-size="11">15</text>
+
+  <!-- More tasks? -->
+  <line x1="915" y1="1330" x2="915" y2="1370" stroke="#333" stroke-width="2"/>
+  <line x1="915" y1="1370" x2="475" y2="1370" stroke="#333" stroke-width="2"/>
+  <line x1="475" y1="1370" x2="475" y2="500" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="475" y1="500" x2="500" y2="500" stroke="#333" stroke-width="1" stroke-dasharray="4,4" marker-end="url(#arrow)"/>
+  <text x="700" y="1385" font-size="10" fill="#333">More tasks? → Back to Review Issues</text>
+
+  <!-- Legend -->
+  <rect x="30" y="1120" width="130" height="120" fill="#f9f9f9" stroke="#ccc" stroke-width="1"/>
+  <text x="95" y="1140" text-anchor="middle" font-size="10" font-weight="bold">LEGEND</text>
+  <ellipse cx="50" cy="1160" rx="15" ry="10" fill="#3498db"/>
+  <text x="75" y="1164" font-size="9">Start/End</text>
+  <polygon points="50,1180 65,1190 50,1200 35,1190" fill="#f39c12"/>
+  <text x="75" y="1194" font-size="9">Decision</text>
+  <rect x="35" y="1210" width="30" height="15" fill="#9b59b6"/>
+  <text x="75" y="1222" font-size="9">Action</text>
+
+</svg>
+
+</div>
+</body>
+</html>

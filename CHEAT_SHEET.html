@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ant Colony Operator Cheat Sheet</title>
+<style>
+@media print {
+  body { margin: 0.3in; }
+  .page-break { page-break-after: always; }
+}
+body {
+  font-family: 'Courier New', monospace;
+  font-size: 9pt;
+  line-height: 1.2;
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 10px;
+}
+h1 { font-size: 14pt; margin: 0 0 5px 0; border-bottom: 2px solid black; }
+h2 { font-size: 10pt; margin: 10px 0 3px 0; background: black; color: white; padding: 2px 5px; }
+h3 { font-size: 9pt; margin: 8px 0 2px 0; border-bottom: 1px solid #666; }
+table { border-collapse: collapse; width: 100%; margin: 3px 0; font-size: 8pt; }
+td, th { border: 1px solid #333; padding: 2px 4px; text-align: left; }
+th { background: #ddd; }
+.col2 { display: flex; gap: 10px; }
+.col2 > div { flex: 1; }
+.box { border: 1px solid black; padding: 5px; margin: 3px 0; }
+.warn { background: #fff3cd; }
+.danger { background: #f8d7da; }
+.success { background: #d4edda; }
+code { background: #eee; padding: 1px 3px; font-size: 8pt; }
+ul, ol { margin: 2px 0; padding-left: 15px; }
+li { margin: 1px 0; }
+.small { font-size: 7pt; }
+</style>
+</head>
+<body>
+
+<h1>🐜 ANT COLONY OPERATOR CHEAT SHEET</h1>
+
+<div class="col2">
+<div>
+
+<h2>HIERARCHY</h2>
+<table>
+<tr><th>Role</th><th>ID</th><th>Does</th><th>Code?</th></tr>
+<tr><td>HUMAN</td><td>You</td><td>Route, test, decide</td><td>NO</td></tr>
+<tr><td>Queen</td><td>Q</td><td>System architecture</td><td>NO</td></tr>
+<tr><td>Princess</td><td>Q-FE, Q-BE</td><td>Domain design</td><td>≤20 lines</td></tr>
+<tr><td>Ant</td><td>Q-FE-1, Q-BE-2</td><td>Single brick</td><td>≤50 lines</td></tr>
+</table>
+
+<h2>STATUS FLOW</h2>
+<code>BACKLOG → IN_PROGRESS → CODE_COMPLETE → TEST_READY → HUMAN_TESTING → DONE</code>
+
+<h2>SPAWN CHECKLIST</h2>
+<div class="box">
+<ol>
+<li>□ Issue exists with task details</li>
+<li>□ All dependencies are DONE</li>
+<li>□ File ownership declared (CREATES/MODIFIES/OFF LIMITS)</li>
+<li>□ <strong>No file overlap with in-progress workers</strong></li>
+<li>□ New terminal opened</li>
+<li>□ Slash command typed (e.g., <code>/user:ant</code>)</li>
+<li>□ Tracker updated (terminal #, time, files)</li>
+</ol>
+</div>
+
+<h2>ABANDON TRIGGERS</h2>
+<div class="box danger">
+<ul>
+<li>🚫 Argues about approach</li>
+<li>🚫 Philosophizes instead of coding</li>
+<li>🚫 Claims "done" with no working UI</li>
+<li>🚫 Same error 3x in a row</li>
+<li>🚫 30+ min silence (no update/commit)</li>
+<li>🚫 Touches files outside ownership</li>
+</ul>
+<strong>Action:</strong> Close terminal. Commit any work. Respawn or reassign.
+</div>
+
+<h2>30-MIN CHECK</h2>
+<div class="box">
+For each terminal: Updated issue? Git commits? Stuck or silent? → prompt or abandon
+</div>
+
+</div>
+<div>
+
+<h2>START SESSION (any terminal)</h2>
+<table>
+<tr><td>Architect</td><td><code>/user:queen</code></td></tr>
+<tr><td>Audit existing</td><td><code>/user:queen-audit</code></td></tr>
+<tr><td>Domain design</td><td><code>/user:princess</code></td></tr>
+<tr><td>Build brick</td><td><code>/user:ant</code></td></tr>
+<tr><td>Wrap legacy</td><td><code>/user:wrapper</code></td></tr>
+<tr><td>Check progress</td><td><code>/user:status</code></td></tr>
+</table>
+
+<h2>QUICK COMMANDS</h2>
+<table>
+<tr><td>See commits</td><td><code>git log --oneline -5</code></td></tr>
+<tr><td>Uncommitted files</td><td><code>git status</code></td></tr>
+<tr><td>Recent changes</td><td><code>git diff --name-only HEAD~3</code></td></tr>
+<tr><td>Find new files</td><td><code>find . -name "*.py" -mmin -60</code></td></tr>
+<tr><td>Run tests</td><td><code>python -m pytest path/to/test.py -v</code></td></tr>
+<tr><td>Save WIP</td><td><code>git add . && git commit -m "WIP: Q-XX-N"</code></td></tr>
+<tr><td>Snapshot chaos</td><td><code>git tag chaos-$(date +%m%d%H%M)</code></td></tr>
+</table>
+
+<h2>FILE CONFLICT CHECK</h2>
+<div class="box warn">
+Before spawn: Does new task touch same files as running worker?
+<br><strong>YES →</strong> Wait or reassign
+<br><strong>NO →</strong> Safe to spawn
+</div>
+
+<h2>RECOVERY QUICK ACTIONS</h2>
+<table>
+<tr><th>Problem</th><th>Action</th></tr>
+<tr><td>Worker silent 30min</td><td>Check terminal → prompt or respawn</td></tr>
+<tr><td>"Done" but broken</td><td>New fix issue or quick patch</td></tr>
+<tr><td>Two workers same file</td><td>Stop both, pick winner, update issues</td></tr>
+<tr><td>Integration gaps</td><td>Princess creates fix issues</td></tr>
+<tr><td>Everything broken</td><td>Tag snapshot, close all, audit, reset scope</td></tr>
+</table>
+
+<h2>EXISTING CODE MODE</h2>
+<table>
+<tr><th>Phase</th><th>Who</th><th>Does</th></tr>
+<tr><td>1. Audit</td><td>Queen</td><td>Map code, find entry points</td></tr>
+<tr><td>2. Wrap</td><td>Princess+Ants</td><td>Brick wrappers around legacy</td></tr>
+<tr><td>3. Test</td><td>HUMAN</td><td>Verify wrappers work</td></tr>
+<tr><td>4. Migrate</td><td>Optional</td><td>Replace wrapper internals</td></tr>
+</table>
+<div class="small">Rule: Don't rewrite working code. Wrap it, isolate it, move on.</div>
+
+<h2>LABELS</h2>
+<code>queen</code> <code>princess</code> <code>worker</code> <code>blocked</code> <code>integration</code> <code>audit</code> <code>wrapper</code>
+
+</div>
+</div>
+
+<h2>TRACKER COLUMNS</h2>
+<table>
+<tr>
+<th>Terminal</th><th>Task ID</th><th>Issue #</th><th>Status</th><th>Started</th><th>Last Update</th><th>Files Owned</th><th>Notes</th>
+</tr>
+<tr>
+<td>1</td><td>Q-FE-1</td><td>#12</td><td>IN_PROGRESS</td><td>10:00</td><td>10:30</td><td>auth_form.py</td><td></td>
+</tr>
+</table>
+
+<div class="col2" style="margin-top: 10px;">
+<div class="box success">
+<h3>✓ Good Signs</h3>
+<ul>
+<li>Regular commits every 15-20 min</li>
+<li>Issue updates with file locations</li>
+<li>Tests passing</li>
+<li>Asks clarifying questions</li>
+</ul>
+</div>
+<div class="box danger">
+<h3>✗ Bad Signs</h3>
+<ul>
+<li>Explaining instead of doing</li>
+<li>Touching files outside scope</li>
+<li>No commits, lots of text</li>
+<li>"I think we should..." (they don't think)</li>
+</ul>
+</div>
+</div>
+
+<p class="small" style="text-align: center; margin-top: 10px;">
+Brick Repo: github.com/drew913s/Brick | Sessions are disposable. GitHub is the brain. HUMAN is the router.
+</p>
+
+</body>
+</html>

@@ -477,3 +477,165 @@ MIT License - Use freely, modify, share. Attribution appreciated but not require
 **End of Specification**
 
 This document is itself a "brick" - self-contained, under 2000 tokens, clear contract, ready for AI consumption.
+# Ant Colony Extension for BRICK_SPEC.md
+
+**Add this section after "Inspector Guidelines" in BRICK_SPEC.md**
+
+---
+
+## Ant Colony Constraints
+
+When working in multi-agent orchestration, additional constraints apply.
+
+### Session Awareness
+
+Every brick is written by a disposable AI session. Therefore:
+
+- **No assumed context**: Each brick must be understandable from its docstring alone
+- **No hidden dependencies**: Everything explicit in metadata
+- **No clever tricks**: The next session won't understand them
+- **No multi-file coordination in one task**: One brick, one file, one responsibility
+- **No verbal handoffs**: All context must be in GitHub, not chat history
+
+### Session Roles and Code Rules
+
+| Role | Code Allowed | Size Limit |
+|------|--------------|------------|
+| Queen (Q) | NO CODE | N/A |
+| Princess (Q-XX) | Minimal (interfaces/scaffolding) | ≤20 lines |
+| Ant (Q-XX-N) | YES (full implementation) | ≤50 lines per brick |
+
+### Handoff Requirements
+
+When a session creates a brick, it must also update:
+
+1. **GitHub issue** with file location
+2. **GitHub issue** with test instructions  
+3. **GitHub issue** with how HUMAN accesses the feature
+
+Example completion comment:
+```markdown
+## Brick Complete - auth_validate_token
+
+**Files created:**
+- `bricks/auth/auth_validate_token.py`
+- `bricks/auth/auth_validate_token.meta.json`
+
+**Access method:** Import and call `auth_validate_token(token, secret)`
+
+**HUMAN can test via:**
+1. Run: `python -c "from bricks.auth.auth_validate_token import test_auth_validate_token; test_auth_validate_token()"`
+2. Expected: All assertions pass
+
+**Integration point:** Used by `api/login.py` brick
+```
+
+### UI Brick Rule
+
+**If a feature has no user-facing access point, it is NOT done.**
+
+Every feature must have ONE of:
+- URL HUMAN can visit
+- Button HUMAN can click
+- Command HUMAN can run
+- API endpoint HUMAN can test (with curl example)
+
+Backend-only bricks must be composed with a UI brick before marking the task complete.
+
+### Composition Documentation
+
+When bricks are composed, document the flow:
+
+```
+User clicks "Login" 
+    → auth_validate_token 
+    → user_get_profile 
+    → render_dashboard
+                ↑
+        HUMAN tests HERE
+```
+
+### Inspector Addition: UI Check
+
+Add to inspector scoring:
+
+| Check | Deduction |
+|-------|-----------|
+| Feature has no documented access method | -20 points |
+| Test instructions missing | -10 points |
+| GitHub issue not updated | -5 points |
+| No HUMAN-testable endpoint | -15 points |
+
+### Progress Update Format
+
+Every 30 minutes, session must comment:
+
+```markdown
+## Progress Update - [ISO timestamp]
+
+**Status:** Working | Blocked | Complete
+**Done this interval:**
+- [completed item]
+- [completed item]
+
+**Currently working on:**
+- [in progress item]
+
+**Blockers:** None | [description of blocker]
+
+**Files modified:**
+- [filename]
+
+**Next:** [what comes next]
+```
+
+### Completion Checklist
+
+Before any session marks a task complete:
+
+```markdown
+## Completion Checklist
+- [ ] Code follows BRICK_SPEC.md (≤50 lines, docstring, tests)
+- [ ] Metadata file created/updated
+- [ ] GitHub issue updated with file locations
+- [ ] Access method documented (URL/command/button)
+- [ ] Test instructions written
+- [ ] HUMAN can verify it works without reading code
+- [ ] Issue label changed to `code-complete`
+```
+
+### Cross-Session References
+
+When a brick depends on another brick:
+
+**In metadata:**
+```json
+{
+  "composes": ["auth_validate_token_v1", "user_get_profile_v1"],
+  "composed_by": ["api_login_v1"]
+}
+```
+
+**In docstring:**
+```python
+"""
+Login endpoint brick.
+
+Composes:
+    - auth_validate_token: Validates JWT
+    - user_get_profile: Gets user data
+
+Composed by:
+    - api_router: Routes to this endpoint
+"""
+```
+
+---
+
+## Related Specifications
+
+- **SESSION_SPEC.md**: How AI sessions behave
+- **HUMAN_SPEC.md**: How human operators manage sessions
+- **BRICK_SPEC.md**: Core brick requirements (this document)
+
+---

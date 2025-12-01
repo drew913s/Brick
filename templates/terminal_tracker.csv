@@ -1,0 +1,12 @@
+ID,Role,Task,GitHub #,Status,Started,Last Update,Notes
+Q,Queen,System Architecture,1,COMPLETE,2025-12-01 14:00,2025-12-01 14:30,Spawned princesses
+Q-FE,Princess,Frontend Domain,2,WAITING,2025-12-01 14:30,2025-12-01 15:00,Waiting on workers
+Q-BE,Princess,Backend Domain,3,WAITING,2025-12-01 14:30,2025-12-01 15:00,Waiting on workers
+Q-DB,Princess,Database Domain,4,COMPLETE,2025-12-01 14:30,2025-12-01 15:30,Workers spawned
+Q-FE-1,Worker,Auth UI Component,5,WORKING,2025-12-01 15:00,2025-12-01 15:30,
+Q-FE-2,Worker,Dashboard Layout,6,TEST_READY,2025-12-01 15:00,2025-12-01 15:45,**TEST THIS**
+Q-FE-3,Worker,Navigation Menu,7,BLOCKED,2025-12-01 15:15,2025-12-01 15:45,Needs design decision
+Q-BE-1,Worker,Auth API Endpoint,8,CODE_COMPLETE,2025-12-01 15:00,2025-12-01 15:30,
+Q-BE-2,Worker,User Profile API,9,WORKING,2025-12-01 15:15,2025-12-01 15:45,
+Q-DB-1,Worker,User Schema,10,DONE,2025-12-01 15:00,2025-12-01 15:20,Tested and verified
+Q-DB-2,Worker,Session Schema,11,ABANDONED,2025-12-01 15:00,2025-12-01 15:10,Went off track

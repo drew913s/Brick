@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ant Colony Quick Reference</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+            font-size: 11px;
+            line-height: 1.3;
+            padding: 10px;
+            max-width: 8.5in;
+        }
+        .page {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .card {
+            border: 2px solid #333;
+            padding: 10px;
+            break-inside: avoid;
+        }
+        .card h2 {
+            font-size: 13px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+        }
+        .card h3 {
+            font-size: 11px;
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+        ul {
+            margin-left: 15px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+            margin-top: 5px;
+        }
+        th, td {
+            border: 1px solid #666;
+            padding: 3px 5px;
+            text-align: left;
+        }
+        th {
+            background: #eee;
+        }
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+        .checklist li::before {
+            content: "☐ ";
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 5px;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 1px 4px;
+            font-size: 10px;
+        }
+        .flow {
+            font-family: monospace;
+            background: #f9f9f9;
+            padding: 8px;
+            margin-top: 5px;
+            font-size: 10px;
+        }
+        @media print {
+            body { padding: 0; }
+            .card { border-width: 1px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        
+        <!-- Card 1: Every 30 Minutes -->
+        <div class="card">
+            <h2>⏰ EVERY 30 MINUTES</h2>
+            <ul class="checklist">
+                <li>Scan tracker - any sessions stale?</li>
+                <li>Check GitHub - any <code>test-ready</code>?</li>
+                <li>Check GitHub - any <code>blocked</code>?</li>
+                <li>Close completed terminals</li>
+                <li>Spawn new workers if room</li>
+            </ul>
+            
+            <h3>Status Labels</h3>
+            <table>
+                <tr><th>Label</th><th>Meaning</th></tr>
+                <tr><td>backlog</td><td>Not started</td></tr>
+                <tr><td>in-progress</td><td>Being worked</td></tr>
+                <tr><td>blocked</td><td>Needs decision</td></tr>
+                <tr><td>code-complete</td><td>Code done</td></tr>
+                <tr><td>test-ready</td><td>Ready to test</td></tr>
+                <tr><td>done</td><td>Verified complete</td></tr>
+            </table>
+        </div>
+
+        <!-- Card 2: Abandon Triggers -->
+        <div class="card">
+            <h2>🚨 ABANDON IF</h2>
+            <table>
+                <tr><th>Symptom</th><th>Action</th></tr>
+                <tr><td>"I think we should discuss..."</td><td>ABANDON</td></tr>
+                <tr><td>"Before I do that, let me..."</td><td>ABANDON</td></tr>
+                <tr><td>500+ words, no code</td><td>ABANDON</td></tr>
+                <tr><td>"Done" but no URL/access</td><td>ABANDON</td></tr>
+                <tr><td>Same error 3x</td><td>ABANDON</td></tr>
+                <tr><td>Working on wrong task</td><td>ABANDON</td></tr>
+                <tr><td>Argues about task</td><td>ABANDON</td></tr>
+                <tr><td>30+ min silence</td><td>CHECK → ABANDON</td></tr>
+            </table>
+            
+            <div class="warning">
+                Don't argue. Close terminal. Check GitHub. Respawn fresh.
+            </div>
+        </div>
+
+        <!-- Card 3: Before Accepting Test-Ready -->
+        <div class="card">
+            <h2>✅ BEFORE ACCEPTING TEST-READY</h2>
+            <ul class="checklist">
+                <li>URL I can visit exists?</li>
+                <li>Command I can run exists?</li>
+                <li>Button I can click exists?</li>
+                <li>I know what SUCCESS looks like?</li>
+                <li>I know what FAILURE looks like?</li>
+            </ul>
+            
+            <h3>Test Flow</h3>
+            <ol>
+                <li>Read access instructions</li>
+                <li>Go to URL / run command</li>
+                <li>Try happy path</li>
+                <li>Try edge case</li>
+                <li>PASS → move to <code>done</code></li>
+                <li>FAIL → comment, move to <code>backlog</code></li>
+            </ol>
+        </div>
+
+        <!-- Card 4: Spawn Checklist -->
+        <div class="card">
+            <h2>🐜 SPAWN CHECKLIST</h2>
+            <ul class="checklist">
+                <li>GitHub issue exists?</li>
+                <li>Task ≤50 lines?</li>
+                <li>ID assigned?</li>
+                <li>Room in tracker? (max 20)</li>
+                <li>Room in wave? (5-10)</li>
+            </ul>
+            
+            <h3>ID Format</h3>
+            <table>
+                <tr><th>Role</th><th>Pattern</th><th>Example</th></tr>
+                <tr><td>Queen</td><td>Q</td><td>Q</td></tr>
+                <tr><td>Princess</td><td>Q-{DOM}</td><td>Q-FE</td></tr>
+                <tr><td>Ant</td><td>Q-{DOM}-{N}</td><td>Q-FE-1</td></tr>
+            </table>
+        </div>
+
+        <!-- Card 5: Phase Flow -->
+        <div class="card">
+            <h2>📋 PHASE FLOW</h2>
+            <ol>
+                <li><strong>Queen designs</strong> → domain specs</li>
+                <li><strong>Princesses design</strong> → worker tasks</li>
+                <li><strong>Workers build</strong> → bricks (waves)</li>
+                <li><strong>Princesses integrate</strong> → compose bricks</li>
+                <li><strong>Queen reviews</strong> → system check</li>
+                <li><strong>HUMAN tests</strong> → full system</li>
+            </ol>
+            
+            <div class="flow">
+BACKLOG → IN_PROGRESS → CODE_COMPLETE
+                ↓
+            BLOCKED
+                ↓
+         TEST_READY → HUMAN_TESTING → DONE
+            </div>
+        </div>
+
+        <!-- Card 6: Quick Commands -->
+        <div class="card">
+            <h2>⌨️ QUICK REFERENCE</h2>
+            
+            <h3>Role Rules</h3>
+            <table>
+                <tr><th>Role</th><th>Code?</th><th>Limit</th></tr>
+                <tr><td>Queen</td><td>NO</td><td>—</td></tr>
+                <tr><td>Princess</td><td>Minimal</td><td>≤20 lines</td></tr>
+                <tr><td>Ant</td><td>YES</td><td>≤50 lines</td></tr>
+            </table>
+            
+            <h3>GitHub Labels</h3>
+            <code>queen</code> <code>princess</code> <code>worker</code><br>
+            <code>backlog</code> <code>in-progress</code> <code>blocked</code><br>
+            <code>code-complete</code> <code>test-ready</code> <code>done</code>
+            
+            <h3>Core Principle</h3>
+            <div class="warning">
+                Sessions are disposable.<br>
+                GitHub is permanent brain.<br>
+                HUMAN is the router.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
